@@ -24,7 +24,7 @@ CONFIG = {
     "monthly_invest": 3000,      # HKD
     "extra_invest": 3000,        # HKD
     "drawdown_threshold": 0.05,  # 5%
-    "cooldown_days": 30,
+    "cooldown_days": 14,         # 补仓冷却期（天）— 经回测验证，14天为最佳平衡点
     "currency_rate": 7.8,
     "symbol": "QQQ",
 }
