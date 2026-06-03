@@ -1,0 +1,57 @@
+name: S4 Strategy Tracker
+
+on:
+  # 每天 UTC 23:00 执行（香港时间次日 7:00 AM）
+  schedule:
+    - cron: '0 23 * * *'
+  
+  # 允许手动触发（方便测试）
+  workflow_dispatch:
+
+# 权限设置：允许创建 Issue 和推送代码
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  track:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # 1. 检出仓库代码（包含 state.json）
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      # 2. 设置 Python 环境
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      # 3. 安装依赖
+      - name: Install dependencies
+        run: |
+          pip install yfinance requests
+      
+      # 4. 运行 S4 追踪脚本
+      - name: Run S4 Tracker
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPO: ${{ github.repository }}
+        run: |
+          python s4_cloud.py
+      
+      # 5. 提交状态变更（state.json）
+      - name: Commit state changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add state.json
+          if git diff --cached --quiet; then
+            echo "No state changes to commit"
+          else
+            git commit -m "Update S4 state [$(date -u +%Y-%m-%d)]"
+            git push
+          fi
