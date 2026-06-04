@@ -29,6 +29,31 @@ CONFIG = {
     "symbol": "QQQM",
 }
 
+# ============ 市场时间检查 ============
+
+def is_market_hours():
+    """判断当前是否在美股交易时段（近似）
+    覆盖 EDT(9:30-16:00 ET = 13:30-20:00 UTC) +
+        EST(9:30-16:00 ET = 14:30-21:00 UTC)
+    只在周一~周五返回 True（周末永远 False）
+    """
+    now = datetime.utcnow()
+    if now.weekday() >= 5:  # 周六/周日
+        return False
+
+    minute_of_day = now.hour * 60 + now.minute
+    # EDT 夏令时: 13:30-20:00 UTC
+    edt_open = 13 * 60 + 30   # 810
+    edt_close = 20 * 60        # 1200
+    # EST 冬令时: 14:30-21:00 UTC
+    est_open = 14 * 60 + 30   # 870
+    est_close = 21 * 60        # 1260
+
+    in_edt = edt_open <= minute_of_day <= edt_close
+    in_est = est_open <= minute_of_day <= est_close
+    return in_edt or in_est
+
+
 # ============ GitHub API 工具 ============
 
 def get_repo():
@@ -279,6 +304,11 @@ def main():
     print("S4 策略云端追踪")
     print(f"执行时间: {datetime.now().strftime('%Y-%m-%d %H:%M:%S UTC')}")
     print("=" * 60)
+
+    # 非交易时段快速退出（防节假日等边缘情况）
+    if not is_market_hours():
+        print("[SKIP] 非美股交易时段，退出")
+        sys.exit(0)
 
     # 加载状态
     state = load_state()
