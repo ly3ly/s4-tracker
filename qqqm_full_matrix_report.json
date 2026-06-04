@@ -1,0 +1,215 @@
+{
+  "config": {
+    "symbol": "QQQM",
+    "start_date": "2021-01-01",
+    "end_date": "2025-12-31",
+    "monthly_invest": 3000,
+    "currency_rate": 7.8,
+    "drawdown_threshold": 5.0,
+    "data_range": "2021-01-04 ~ 2025-12-30",
+    "n_days": 1254,
+    "n_months": 60
+  },
+  "results": [
+    {
+      "strategy": "S1",
+      "cooldown": 0,
+      "total_invested": 180000.0,
+      "final_value": 294841.43,
+      "return_pct": 63.8,
+      "max_drawdown": -20.41,
+      "regular_count": 60,
+      "extra_count": 0
+    },
+    {
+      "strategy": "S1",
+      "cooldown": 7,
+      "total_invested": 180000.0,
+      "final_value": 294841.43,
+      "return_pct": 63.8,
+      "max_drawdown": -20.41,
+      "regular_count": 60,
+      "extra_count": 0
+    },
+    {
+      "strategy": "S1",
+      "cooldown": 14,
+      "total_invested": 180000.0,
+      "final_value": 294841.43,
+      "return_pct": 63.8,
+      "max_drawdown": -20.41,
+      "regular_count": 60,
+      "extra_count": 0
+    },
+    {
+      "strategy": "S1",
+      "cooldown": 30,
+      "total_invested": 180000.0,
+      "final_value": 294841.43,
+      "return_pct": 63.8,
+      "max_drawdown": -20.41,
+      "regular_count": 60,
+      "extra_count": 0
+    },
+    {
+      "strategy": "S2",
+      "cooldown": 0,
+      "total_invested": 249000.0,
+      "final_value": 423056.35,
+      "return_pct": 69.9,
+      "max_drawdown": -19.4,
+      "regular_count": 60,
+      "extra_count": 23
+    },
+    {
+      "strategy": "S2",
+      "cooldown": 7,
+      "total_invested": 246000.0,
+      "final_value": 416137.51,
+      "return_pct": 69.16,
+      "max_drawdown": -19.34,
+      "regular_count": 60,
+      "extra_count": 22
+    },
+    {
+      "strategy": "S2",
+      "cooldown": 14,
+      "total_invested": 240000.0,
+      "final_value": 403424.8,
+      "return_pct": 68.09,
+      "max_drawdown": -19.21,
+      "regular_count": 60,
+      "extra_count": 20
+    },
+    {
+      "strategy": "S2",
+      "cooldown": 30,
+      "total_invested": 234000.0,
+      "final_value": 391319.14,
+      "return_pct": 67.23,
+      "max_drawdown": -20.09,
+      "regular_count": 60,
+      "extra_count": 18
+    },
+    {
+      "strategy": "S3",
+      "cooldown": 0,
+      "total_invested": 1950000.0,
+      "final_value": 3593163.16,
+      "return_pct": 84.26,
+      "max_drawdown": -19.98,
+      "regular_count": 60,
+      "extra_count": 590
+    },
+    {
+      "strategy": "S3",
+      "cooldown": 7,
+      "total_invested": 585000.0,
+      "final_value": 1036671.71,
+      "return_pct": 77.21,
+      "max_drawdown": -20.2,
+      "regular_count": 60,
+      "extra_count": 135
+    },
+    {
+      "strategy": "S3",
+      "cooldown": 14,
+      "total_invested": 399000.0,
+      "final_value": 689711.07,
+      "return_pct": 72.86,
+      "max_drawdown": -20.32,
+      "regular_count": 60,
+      "extra_count": 73
+    },
+    {
+      "strategy": "S3",
+      "cooldown": 30,
+      "total_invested": 291000.0,
+      "final_value": 493217.45,
+      "return_pct": 69.49,
+      "max_drawdown": -20.01,
+      "regular_count": 60,
+      "extra_count": 37
+    },
+    {
+      "strategy": "S4",
+      "cooldown": 0,
+      "total_invested": 264000.0,
+      "final_value": 447160.67,
+      "return_pct": 69.38,
+      "max_drawdown": -18.91,
+      "regular_count": 60,
+      "extra_count": 28
+    },
+    {
+      "strategy": "S4",
+      "cooldown": 7,
+      "total_invested": 264000.0,
+      "final_value": 447160.67,
+      "return_pct": 69.38,
+      "max_drawdown": -18.91,
+      "regular_count": 60,
+      "extra_count": 28
+    },
+    {
+      "strategy": "S4",
+      "cooldown": 14,
+      "total_invested": 261000.0,
+      "final_value": 440880.69,
+      "return_pct": 68.92,
+      "max_drawdown": -18.84,
+      "regular_count": 60,
+      "extra_count": 27
+    },
+    {
+      "strategy": "S4",
+      "cooldown": 30,
+      "total_invested": 249000.0,
+      "final_value": 420221.47,
+      "return_pct": 68.76,
+      "max_drawdown": -19.53,
+      "regular_count": 60,
+      "extra_count": 23
+    },
+    {
+      "strategy": "S5",
+      "cooldown": 0,
+      "total_invested": 1950000.0,
+      "final_value": 3593163.16,
+      "return_pct": 84.26,
+      "max_drawdown": -19.98,
+      "regular_count": 60,
+      "extra_count": 590
+    },
+    {
+      "strategy": "S5",
+      "cooldown": 7,
+      "total_invested": 585000.0,
+      "final_value": 1036671.71,
+      "return_pct": 77.21,
+      "max_drawdown": -20.2,
+      "regular_count": 60,
+      "extra_count": 135
+    },
+    {
+      "strategy": "S5",
+      "cooldown": 14,
+      "total_invested": 399000.0,
+      "final_value": 689711.07,
+      "return_pct": 72.86,
+      "max_drawdown": -20.32,
+      "regular_count": 60,
+      "extra_count": 73
+    },
+    {
+      "strategy": "S5",
+      "cooldown": 30,
+      "total_invested": 291000.0,
+      "final_value": 493217.45,
+      "return_pct": 69.49,
+      "max_drawdown": -20.01,
+      "regular_count": 60,
+      "extra_count": 37
+    }
+  ]
+}
