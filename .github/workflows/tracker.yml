@@ -53,12 +53,12 @@ jobs:
         run: |
           python s4_cloud.py
       
-      # 5. 提交状态变更（state.json）
+      # 5. 提交状态变更（state.json + PORTFOLIO_STATUS.md）
       - name: Commit state changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add state.json
+          git add state.json PORTFOLIO_STATUS.md
           if git diff --cached --quiet; then
             echo "No state changes to commit"
           else
