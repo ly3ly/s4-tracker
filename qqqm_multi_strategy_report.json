@@ -1,0 +1,62 @@
+{
+  "config": {
+    "symbol": "QQQM",
+    "period": "2021-01-04 ~ 2025-12-30",
+    "monthly_invest": 3000,
+    "drawdown_threshold": 5.0,
+    "cooldown_days": 30,
+    "currency_rate": 7.8
+  },
+  "strategies": [
+    {
+      "strategy": "S1",
+      "label": "(纯月度定投)",
+      "total_invested": 180000.0,
+      "final_value": 294841.44,
+      "return_pct": 63.8,
+      "max_drawdown": -20.41,
+      "regular_count": 60,
+      "extra_count": 0
+    },
+    {
+      "strategy": "S2",
+      "label": "(上次买入价回撤)",
+      "total_invested": 234000.0,
+      "final_value": 391319.15,
+      "return_pct": 67.23,
+      "max_drawdown": -20.09,
+      "regular_count": 60,
+      "extra_count": 18
+    },
+    {
+      "strategy": "S3",
+      "label": "(前高点回撤)",
+      "total_invested": 291000.0,
+      "final_value": 493210.5,
+      "return_pct": 69.49,
+      "max_drawdown": -20.01,
+      "regular_count": 60,
+      "extra_count": 37
+    },
+    {
+      "strategy": "S4",
+      "label": "(上涨周期高点回撤)",
+      "total_invested": 249000.0,
+      "final_value": 420221.47,
+      "return_pct": 68.76,
+      "max_drawdown": -19.53,
+      "regular_count": 60,
+      "extra_count": 23
+    },
+    {
+      "strategy": "S5",
+      "label": "(双条件补仓)",
+      "total_invested": 291000.0,
+      "final_value": 493210.5,
+      "return_pct": 69.49,
+      "max_drawdown": -20.01,
+      "regular_count": 60,
+      "extra_count": 37
+    }
+  ]
+}
