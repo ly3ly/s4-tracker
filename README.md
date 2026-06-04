@@ -137,6 +137,20 @@ S5 设计为「双条件（ATH 回撤 **或** 定投价回撤）」，理论上�
 - 🏔️ **2022-09-21**：QQQM $113.96，距周期高点回撤 8.7%，二次探底
 - 🏔️ **2025-03-28**：QQQM $192.05，距周期高点回撤 8.4%，近期最大回调
 
+### 实盘买入点标注（S4 策略）
+
+下图蓝色圆点为每月定投点，倒三角为补仓触发点，灰色竖线标记每次补仓的日期：
+
+![QQQM S4 Buy Points Detail](docs/qqqm_buy_s4_detail.png)
+
+> 💡 可以看到补仓大多集中在 2022 年熊市底部区域（$108~$130 区间），2023-2025 的补仓则分布在每次上涨后的回调中。23 次补仓中有 10 次发生在 2022 年——这是 S4 超额收益的核心来源。
+
+### 四策略买入点对比
+
+![QQQM All Strategies Buy Points](docs/qqqm_buy_all.png)
+
+> 📊 **从上到下 S2 → S3 → S4 → S5**：S3/S5 的补仓点明显更密集（37 次），遍布整个 5 年区间；S4 只在「上涨后回调」时触发，更聚焦于真正的回调机会。
+
 ---
 
 ## 🔬 冷却期对比研究（基于 QQQM 2021-2025 实盘数据）
@@ -260,6 +274,7 @@ CONFIG = {
 | 2026-06-04 | 切换标的 QQQ → QQQM | ✅ 已更新 |
 | 2026-06-04 | QQQM 多策略回测（2021-2025）全部重跑 | ✅ 已通过 |
 | **2026-06-04** | **QQQM 全矩阵回测（S1-S5 × 0/7/14/30d 冷却期）+ 可视化图表** | **✅ 已通过** |
+| **2026-06-04** | **QQQM 买入点标注图表（S2/S3/S4/S5 实盘定投+补仓点标注）** | **✅ 已通过** |
 
 ### 📊 可视化图表
 
@@ -269,6 +284,12 @@ CONFIG = {
 | [冷却期对比](docs/qqqm_cooldown_comparison.png) | S4 策略不同冷却期的收益率与补仓次数 |
 | [热力图](docs/qqqm_cooldown_heatmap.png) | 全策略 × 冷却期收益率矩阵 |
 | [资金曲线](docs/qqqm_value_curves.png) | S1 vs S4 资金曲线对比（5年） |
+| [S4 买入点放大](docs/qqqm_buy_s4_detail.png) | S4 策略实盘 K 线 + 定投点 + 补仓点标注（含日期） |
+| [四策略买入对比](docs/qqqm_buy_all.png) | S2/S3/S4/S5 价格曲线 + 各策略买入点叠加对比 |
+| [S2 买入点](docs/qqqm_buy_s2.png) | S2 单独：上次买入价回撤策略 |
+| [S3 买入点](docs/qqqm_buy_s3.png) | S3 单独：ATH 回撤策略 |
+| [S4 买入点](docs/qqqm_buy_s4.png) | S4 单独：上涨周期高点回撤策略 |
+| [S5 买入点](docs/qqqm_buy_s5.png) | S5 单独：双条件补仓策略 |
 
 ### 数据文件说明
 
@@ -276,6 +297,8 @@ CONFIG = {
 |------|------|------|
 | `qqqm_multi_strategy_report.json` | QQQM 五策略回测结果 | ⭐ 当前使用 |
 | `qqqm_multi_strategy_report.md` | QQQM 完整报告含补仓明细 | ⭐ 当前使用 |
+| `qqqm_full_matrix_report.json` | QQQM 全矩阵（S1-S5 × 0/7/14/30d） | 20 条结果 |
+| `qqqm_trade_details.json` | QQQM S2-S5 完整交易明细（含每笔日期/价格/原因） | 用于图表生成 |
 | `qqqm_daily_prices_2021_2025.csv` | QQQM 日线数据 | 1,254 条 |
 | `qqqm_monthly_prices_2021_2025.csv` | QQQM 月度数据 | 60 个月 |
 | `multi_strategy_report_v2.json` | QQQ 回测结果（旧） | 历史参考 |
