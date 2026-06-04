@@ -1,0 +1,22 @@
+{
+  "initialized": true,
+  "last_peak": 308.21,
+  "in_uptrend": true,
+  "last_extra_date": null,
+  "last_regular_date": null,
+  "last_close": 306.61,
+  "total_invested": 8817.33,
+  "total_shares": 4.24,
+  "avg_cost_usd": 266.61,
+  "account": "TIGER",
+  "symbol": "QQQM",
+  "history": [
+    {
+      "date": "2026-06-04",
+      "note": "手动校准：根据用户实际持仓更新 total_shares=4.24, avg_cost=$266.61, account=TIGER, symbol=QQQM",
+      "price_usd": 266.61,
+      "actions": [],
+      "messages": []
+    }
+  ]
+}
