@@ -3,7 +3,7 @@
 """
 S4 策略实时追踪工具
 =========================
-自动获取 QQQ 收盘价，判断定投/补仓触发条件，输出醒目提醒。
+自动获取 QQQM 收盘价，判断定投/补仓触发条件，输出醒目提醒。
 
 用法:
     # 自动获取今日价格并检查
@@ -70,7 +70,7 @@ def save_state(state):
 
 def get_qqq_price():
     """
-    自动获取 QQQ 最新收盘价。
+    自动获取 QQQM 最新收盘价。
     返回: {"date": str, "close": float, "high": float, "prev_close": float|None}
     """
     try:
@@ -263,7 +263,7 @@ def build_report(date_str, price, actions, messages, state):
     ret_pct = (profit / state["total_invested"] * 100) if state["total_invested"] > 0 else 0
 
     lines = [
-        f"📅 日期: {date_str}  |  QQQ 收盘: ${p:.2f}  (≈ HKD {hkd_price:.2f})",
+        f"📅 日期: {date_str}  |  QQQM 收盘: ${p:.2f}  (≈ HKD {hkd_price:.2f})",
         "-" * 60,
     ]
 

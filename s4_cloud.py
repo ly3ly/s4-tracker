@@ -3,7 +3,7 @@
 """
 S4 策略云端追踪脚本
 ====================
-运行在 GitHub Actions 上，每天自动检查 QQQ 价格，触发操作时创建 GitHub Issue 发邮件通知。
+运行在 GitHub Actions 上，每天自动检查 QQQM 价格，触发操作时创建 GitHub Issue 发邮件通知。
 
 环境变量:
     GITHUB_TOKEN    - GitHub 自动提供
@@ -26,7 +26,7 @@ CONFIG = {
     "drawdown_threshold": 0.05,  # 5%
     "cooldown_days": 14,         # 补仓冷却期（天）— 经回测验证，14天为最佳平衡点
     "currency_rate": 7.8,
-    "symbol": "QQQ",
+    "symbol": "QQQM",
 }
 
 # ============ GitHub API 工具 ============
@@ -103,9 +103,9 @@ def save_state(state):
 # ============ 价格获取 ============
 
 def get_qqq_price():
-    """获取 QQQ 最新收盘价"""
+    """获取 QQQM 最新收盘价"""
     try:
-        ticker = yf.Ticker("QQQ")
+        ticker = yf.Ticker("QQQM")
         hist = ticker.history(period="5d")
         if hist.empty:
             return None
@@ -237,7 +237,7 @@ def build_report(date_str, price, actions, messages, state):
     ret_pct = (profit / state["total_invested"] * 100) if state["total_invested"] > 0 else 0
 
     lines = [
-        f"📅 日期: {date_str}  |  QQQ 收盘: ${p:.2f}",
+        f"📅 日期: {date_str}  |  QQQM 收盘: ${p:.2f}",
         "",
         "**策略状态:**",
         f"- last_peak: ${state['last_peak']:.2f}" if state.get("last_peak") else "- last_peak: 未初始化",
@@ -276,11 +276,11 @@ def main():
     # 获取价格
     price_data = get_qqq_price()
     if not price_data:
-        print("[ERROR] 无法获取 QQQ 价格，今日跳过")
+        print("[ERROR] 无法获取 QQQM 价格，今日跳过")
         sys.exit(1)
 
     date_str = price_data["date"]
-    print(f"[DATA] QQQ {date_str} 收盘: ${price_data['close']:.2f}")
+    print(f"[DATA] QQQM {date_str} 收盘: ${price_data['close']:.2f}")
 
     # 执行策略
     actions, messages, state = run_s4_strategy(price_data, state, date_str)
