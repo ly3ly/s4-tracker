@@ -125,13 +125,23 @@ def get_qqq_price():
 # ============ S4 策略核心 ============
 
 def is_last_trading_day_of_month(date_str):
-    """判断是否为月末最后一个交易日（简化版）"""
+    """判断是否为月末最后一个交易日（交易日感知版）
+
+    规则：如果 yfinance 返回的日期是本月最后一个交易日。
+    逻辑：从当月最后一天往前找，第一个周一~周五就是最后一个交易日。
+    如果 date_str 等于那个日期，就是月末定投日。
+    """
     d = datetime.strptime(date_str, "%Y-%m-%d")
+    # 当月最后一天
     if d.month == 12:
-        last_day = datetime(d.year + 1, 1, 1) - timedelta(days=1)
+        last_calendar = datetime(d.year + 1, 1, 1) - timedelta(days=1)
     else:
-        last_day = datetime(d.year, d.month + 1, 1) - timedelta(days=1)
-    return d.day == last_day.day
+        last_calendar = datetime(d.year, d.month + 1, 1) - timedelta(days=1)
+    # 从最后一天往前找第一个工作日
+    last_trading = last_calendar
+    while last_trading.weekday() >= 5:  # 5=Saturday, 6=Sunday
+        last_trading -= timedelta(days=1)
+    return d.date() == last_trading.date()
 
 def run_s4_strategy(price_data, state, date_str, force_regular=False):
     """

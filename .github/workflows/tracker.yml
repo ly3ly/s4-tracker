@@ -1,9 +1,9 @@
 name: S4 Strategy Tracker
 
 on:
-  # 每天 UTC 23:00 执行（香港时间次日 7:00 AM）
+  # 每天 UTC 22:00 执行（香港时间次日 6:00 AM）
   schedule:
-    - cron: '0 23 * * *'
+    - cron: '0 22 * * *'
   
   # 允许手动触发（方便测试）
   workflow_dispatch:
