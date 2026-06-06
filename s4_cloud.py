@@ -399,13 +399,9 @@ def main():
         if issue:
             print(f"\n[NOTIFY] 邮件通知已发送至你的 GitHub 注册邮箱")
 
-    # 返回码
-    if "extra" in actions:
-        sys.exit(2)
-    elif "regular" in actions:
-        sys.exit(1)
-    else:
-        sys.exit(0)
+    # 返回码：始终以 0 退出（非 0 会让 GitHub Actions 报 failure）
+    # 业务状态（定投/补仓/无操作）通过日志和 Issue 传达，不用退出码区分
+    sys.exit(0)
 
 if __name__ == "__main__":
     main()
