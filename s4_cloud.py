@@ -232,7 +232,11 @@ def run_s4_strategy(price_data, state, date_str, force_regular=False):
                     last_extra = datetime.strptime(state["last_extra_date"], "%Y-%m-%d")
                     current = datetime.strptime(date_str, "%Y-%m-%d")
                     days_since = (current - last_extra).days
-                    if days_since < CONFIG["cooldown_days"]:
+                    # 同一天内绝对不重复补仓（防止多个 workflow run 并发竞态）
+                    if days_since == 0:
+                        can_extra = False
+                        print(f"[SKIP] 今日({date_str})已触发过补仓，跳过（防止并发重复）")
+                    elif days_since < CONFIG["cooldown_days"]:
                         can_extra = False
                         print(f"[COOLDOWN] 冷却期中 ({days_since}/{CONFIG['cooldown_days']} 天)")
 
