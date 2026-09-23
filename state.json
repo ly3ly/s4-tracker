@@ -4,7 +4,7 @@
   "in_uptrend": true,
   "last_extra_date": "2026-07-17",
   "last_regular_date": "2026-08-31",
-  "last_close": 304.98,
+  "last_close": 304.9772,
   "total_invested": 23817.33,
   "total_shares": 10.863875270163817,
   "avg_cost_usd": 266.61,
@@ -12,8 +12,8 @@
   "symbol": "QQQM",
   "portfolio": {
     "price_usd": 304.98,
-    "value_hkd": 25843.46,
-    "profit_hkd": 2026.13,
+    "value_hkd": 25843.23,
+    "profit_hkd": 2025.9,
     "return_pct": 8.51,
     "avg_cost_usd": 266.61,
     "last_updated": "2026-09-23"
