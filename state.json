@@ -4,19 +4,19 @@
   "in_uptrend": false,
   "last_extra_date": "2026-11-05",
   "last_regular_date": "2026-10-30",
-  "last_close": 284.96,
+  "last_close": 283.14,
   "total_invested": 35817.33,
   "total_shares": 16.206658961524102,
   "avg_cost_usd": 266.61,
   "account": "TIGER",
   "symbol": "QQQM",
   "portfolio": {
-    "price_usd": 284.96,
-    "value_hkd": 36022.35,
-    "profit_hkd": 205.02,
-    "return_pct": 0.57,
+    "price_usd": 283.14,
+    "value_hkd": 35792.28,
+    "profit_hkd": -25.05,
+    "return_pct": -0.07,
     "avg_cost_usd": 266.61,
-    "last_updated": "2026-11-11"
+    "last_updated": "2026-11-12"
   },
   "history": [
     {
